@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color system */
+  --color-bg: #0B1120;
+  --color-surface: #111827;
+  --color-surface-2: #172033;
+  --color-text: #F8FAFC;
+  --color-text-muted: #94A3B8;
+  --color-text-faint: #64748B;
+  --color-border: #1E293B;
+  --color-border-strong: #2A3A52;
+  --color-accent: #FF9900;
+  --color-accent-dim: #C97600;
+  --color-accent-soft: #3B2A14;
+  --color-blue: #5B8DEF;
+  --color-blue-soft: #1B2A45;
+
+  /* Type */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  --breakpoint-xs: 390px;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: #0B1120;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-page {
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.02em;
+    color: var(--color-text-muted);
+    background-color: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    padding: 0.28rem 0.6rem;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  .card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--color-accent);
+    color: #0B1120;
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.4rem;
+    border-radius: 6px;
+    transition: background-color 160ms ease, transform 160ms ease;
+  }
+  .btn-primary:hover {
+    background-color: #FFAD33;
+    transform: translateY(-1px);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border-strong);
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding: 0.75rem 1.4rem;
+    border-radius: 6px;
+    transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+  }
+  .btn-secondary:hover {
+    border-color: var(--color-accent);
+    background-color: var(--color-surface);
+    transform: translateY(-1px);
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-text-faint);
+  }
+
+  .fade-in {
+    animation: fadeIn 700ms ease both;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .link-underline {
+    position: relative;
+    text-decoration: none;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 220ms ease;
+  }
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
