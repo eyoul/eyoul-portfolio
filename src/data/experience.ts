@@ -7,18 +7,7 @@ export interface ExperienceEntry {
   technologies: string[];
 }
 
-// NOTE: Replace these placeholders with your real employment history.
-// Nothing here is fabricated — update each field with your actual details.
-export const experience: ExperienceEntry[] = [
-  {
-    position: "[ADD YOUR JOB TITLE]",
-    organization: "[ADD YOUR COMPANY]",
-    dates: "[ADD DATES]",
-    responsibilities: [
-      "[ADD YOUR INFORMATION]",
-      "[ADD YOUR INFORMATION]",
-    ],
-    achievements: ["[ADD YOUR INFORMATION]"],
-    technologies: ["AWS", "Terraform", "Django", "React"],
-  },
-];
+// Intentionally empty: this portfolio focuses on cloud/software engineering
+// projects and credentials rather than prior professional experience.
+// Add entries here if/when there is tech-focused work history to show.
+export const experience: ExperienceEntry[] = [];

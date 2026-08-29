@@ -34,13 +34,11 @@ The site is data-driven: to update content, edit the files in `src/data/` rather
 
 Search the codebase for `[ADD YOUR INFORMATION]` / `[ADD ...]` placeholders — nothing was fabricated, so these are left for you to complete:
 
-- **`src/data/site.ts`** — your real email address, LinkedIn URL, GitHub URL
-- **`src/data/experience.ts`** — your actual job titles, employers, dates, responsibilities and achievements
-- **`src/data/certifications.ts`** — real dates, credential IDs and verification URLs for any certifications you hold (remove any you don't hold)
 - **`src/data/projects.ts`** — add a `githubUrl` to the FCMS entry if/when the repository is public
-- **Resume** — drop your resume PDF at `public/resume.pdf` (referenced by `resumeUrl` in `site.ts`). The "Download Resume" buttons in the nav, hero, footer and contact section already link there.
 - **Domain/SEO URLs** — `index.html`, `public/robots.txt` and `public/sitemap.xml` currently use `https://eyoul.dev/` as a placeholder domain; update once you have a real one.
 - **Open Graph image** — `index.html` references `/og-image.png`; add a 1200×630 image at `public/og-image.png` for link previews (or remove the tag).
+
+Already filled in: real contact details (`src/data/site.ts`), AWS/Cisco certifications (`src/data/certifications.ts`), education (`src/data/education.ts`), and `public/resume.pdf` (a Canadian-style resume — this includes your full banking career history, since a resume should be complete; the site itself intentionally only tells the cloud/software story through skills, certifications and projects).
 
 ## Deploying
 

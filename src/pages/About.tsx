@@ -5,6 +5,7 @@ import CertificationCard from "../components/CertificationCard";
 import { skillGroups } from "../data/skills";
 import { experience } from "../data/experience";
 import { certifications } from "../data/certifications";
+import { education } from "../data/education";
 
 export default function About() {
   return (
@@ -12,7 +13,7 @@ export default function About() {
       <Reveal>
         <p className="eyebrow mb-4">About</p>
         <h1 className="text-3xl sm:text-4xl font-bold tracking-tight max-w-2xl">
-          Cloud &amp; Solutions Architect
+          Cloud &amp; Software Engineer
         </h1>
         <div className="mt-6 max-w-2xl space-y-4 text-[15px] leading-relaxed" style={{ color: "var(--color-text-muted)" }}>
           <p>
@@ -26,10 +27,12 @@ export default function About() {
             React and PostgreSQL.
           </p>
           <p>
-            My recent work includes designing and deploying an enterprise
+            My project work includes designing and building an enterprise
             Fraud Case Management System covering case intake, investigation
             workflows, evidence management, approvals, reporting, audit
-            trails and analytics.
+            trails and analytics, and AuditGuard, a retrieval-augmented
+            chatbot that answers audit and compliance questions from policy
+            documents with cited sources.
           </p>
           <p>
             I enjoy solving complex business problems through well-structured
@@ -52,12 +55,38 @@ export default function About() {
         </Reveal>
       </section>
 
+      {experience.length > 0 && (
+        <section className="mt-20">
+          <Reveal>
+            <p className="eyebrow mb-3">Experience</p>
+            <h2 className="text-2xl font-bold tracking-tight">Where I've worked</h2>
+          </Reveal>
+          <ExperienceTimeline entries={experience} />
+        </section>
+      )}
+
       <section className="mt-20">
         <Reveal>
-          <p className="eyebrow mb-3">Experience</p>
-          <h2 className="text-2xl font-bold tracking-tight">Where I've worked</h2>
+          <p className="eyebrow mb-3">Education</p>
+          <h2 className="text-2xl font-bold tracking-tight mb-8">Academic background</h2>
         </Reveal>
-        <ExperienceTimeline entries={experience} />
+        <div className="flex flex-col">
+          {education.map((edu, i) => (
+            <Reveal key={edu.degree} delay={i * 60}>
+              <div className="grid sm:grid-cols-[160px_1fr] gap-3 sm:gap-10 py-6 border-t" style={{ borderColor: "var(--color-border)" }}>
+                <p className="font-mono text-[12px]" style={{ color: "var(--color-text-faint)" }}>
+                  {edu.date}
+                </p>
+                <div>
+                  <p className="font-semibold text-[15px]">{edu.degree}</p>
+                  <p className="text-[13.5px] mt-1" style={{ color: "var(--color-text-muted)" }}>
+                    {edu.institution}
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </section>
 
       <section className="mt-20">

@@ -118,10 +118,12 @@ export default function Home() {
                 React and PostgreSQL.
               </p>
               <p>
-                My recent work includes designing and deploying an enterprise
+                My project work includes designing and building an enterprise
                 Fraud Case Management System covering case intake,
                 investigation workflows, evidence management, approvals,
-                reporting, audit trails and analytics.
+                reporting, audit trails and analytics, and AuditGuard, a
+                retrieval-augmented chatbot that answers audit and compliance
+                questions from policy documents with cited sources.
               </p>
               <p>
                 I enjoy solving complex business problems through
@@ -137,15 +139,17 @@ export default function Home() {
         </Reveal>
       </section>
 
-      <section id="experience" className="container-page pb-24 sm:pb-32">
-        <Reveal>
-          <p className="eyebrow mb-3">Experience</p>
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight max-w-xl">
-            Where I've worked
-          </h2>
-        </Reveal>
-        <ExperienceTimeline entries={experience} />
-      </section>
+      {experience.length > 0 && (
+        <section id="experience" className="container-page pb-24 sm:pb-32">
+          <Reveal>
+            <p className="eyebrow mb-3">Experience</p>
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight max-w-xl">
+              Where I've worked
+            </h2>
+          </Reveal>
+          <ExperienceTimeline entries={experience} />
+        </section>
+      )}
 
       <section id="certifications" className="container-page pb-24 sm:pb-32">
         <Reveal>

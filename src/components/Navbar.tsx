@@ -50,7 +50,7 @@ export default function Navbar() {
             className="hidden sm:inline font-mono text-[11px] font-normal"
             style={{ color: "var(--color-text-faint)" }}
           >
-            / solutions-architect
+            / software-engineer
           </span>
         </Link>
 

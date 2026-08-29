@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import FCMS from "./pages/FCMS";
+import AuditGuard from "./pages/AuditGuard";
 import Architecture from "./pages/Architecture";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -28,6 +29,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/fcms" element={<FCMS />} />
+          <Route path="/projects/auditguard" element={<AuditGuard />} />
           <Route path="/architecture" element={<Architecture />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

@@ -43,4 +43,8 @@ export const skillGroups: SkillGroup[] = [
       "Audit Logging",
     ],
   },
+  {
+    category: "Networking & Security",
+    items: ["Computer Networking", "CCNA", "Cybersecurity Fundamentals"],
+  },
 ];

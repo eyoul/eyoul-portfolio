@@ -27,10 +27,12 @@ export default function CertificationCard({ cert }: { cert: Certification }) {
           {cert.issuer}
         </p>
       </div>
-      <div className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11px] pt-2 border-t" style={{ borderColor: "var(--color-border)", color: "var(--color-text-faint)" }}>
-        <span>Issued {cert.date}</span>
-        {cert.credentialId && <span>ID: {cert.credentialId}</span>}
-      </div>
+      {(cert.date || cert.credentialId) && (
+        <div className="flex flex-wrap gap-x-4 gap-y-1 font-mono text-[11px] pt-2 border-t" style={{ borderColor: "var(--color-border)", color: "var(--color-text-faint)" }}>
+          {cert.date && <span>Issued {cert.date}</span>}
+          {cert.credentialId && <span>ID: {cert.credentialId}</span>}
+        </div>
+      )}
     </div>
   );
 }

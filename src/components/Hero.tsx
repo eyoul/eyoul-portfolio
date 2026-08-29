@@ -8,7 +8,7 @@ export default function Hero() {
     <section className="container-page pt-16 pb-20 sm:pt-24 sm:pb-28">
       <div className="grid lg:grid-cols-[1.1fr_0.9fr] gap-16 items-center">
         <div className="fade-in">
-          <p className="eyebrow mb-5">Cloud &amp; Solutions Architect</p>
+          <p className="eyebrow mb-5">Cloud &amp; Software Engineer</p>
           <h1
             className="text-[2.4rem] leading-[1.08] sm:text-[3.1rem] sm:leading-[1.06] font-bold tracking-tight"
             style={{ color: "var(--color-text)" }}

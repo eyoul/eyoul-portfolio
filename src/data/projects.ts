@@ -38,4 +38,27 @@ export const projects: Project[] = [
     hasCaseStudy: true,
     primary: true,
   },
+  {
+    slug: "auditguard",
+    name: "AuditGuard",
+    subtitle: "RAG-Powered Chatbot for Audit & Compliance Queries",
+    problem:
+      "Auditors and compliance teams spend significant time manually searching through large volumes of policy documents, filings and standards to answer a single compliance question.",
+    solution:
+      "A retrieval-augmented generation chatbot that ingests PDF and text documents, chunks and embeds them, stores the vectors in ChromaDB, and answers natural-language questions with cited sources — served through a Flask API and React interface.",
+    technology: [
+      "Python",
+      "Flask",
+      "React",
+      "ChromaDB",
+      "Sentence Transformers",
+      "Groq",
+      "SQLite",
+      "Celery",
+      "Docker",
+      "RAGAS",
+    ],
+    hasCaseStudy: true,
+    githubUrl: "https://github.com/eyoul/auditguard-chatbot",
+  },
 ];
